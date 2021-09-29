@@ -1,6 +1,7 @@
 import Heading from "./components/heading/Heading";
 import Theory from "./components/theory/Theory";
 function App() {
+  
   return (
     <div>
         <Heading />
