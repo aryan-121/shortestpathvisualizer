@@ -1,0 +1,30 @@
+.container{
+    margin: 20px;
+}
+.row{
+    display: flex;
+    justify-content: space-evenly;
+    margin:  48px 5px; 
+}
+.distance{
+    justify-content: space-between;
+}
+
+.column{
+    display: flex;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    border:#ff4a4a 2px solid;
+    border-radius: 50%;
+    color: #f2f2f2; 
+    background: #ff4a4a;  
+    font-weight:200; 
+    float: left; 
+    font-family: 'Libre Baskerville', serif;
+}
+input{
+    height: 60px;
+    width: 180px;
+}
