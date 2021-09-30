@@ -44,6 +44,13 @@ class Simulation extends Component{
         this.shortestPath(r1, r2, c1, c2, -9999);
     }
     
+    blue = (id) => {
+        let point = document.getElementById(id);
+        point.style.background = '#4081ec';
+        point.style.border = '2px #4081ec solid';
+        point.style.color = '#fff';
+    }
+
     green = (id) => {
         let point = document.getElementById(id);
         point.style.background = '#01f702';
@@ -61,21 +68,21 @@ class Simulation extends Component{
     shortestPath = (r1, r2, c1, c2, len) => {
         if(c1 === c2){
             if(r2-r1 > 1){
-                this.green(this.arr[1][c1]);
+                this.blue(this.arr[1][c1]);
             }
         }
         else if(r1 === r2){
             if(c2-c1 > 1){
-                this.green(this.arr[r1][1]);
+                this.blue(this.arr[r1][1]);
             }
         }
         else if(c2-c1 === 1){
             if(r2-r1 === 1){
                 if((this.path[2*r1][c2] + this.path[2*r1 + 1][c2]) > (this.path[2*r1+1][c1] + this.path[2*r1+2][c2])){
-                    this.green(this.arr[r1][c2]);
+                    this.blue(this.arr[r1][c2]);
                 }
                 else{
-                    this.green(this.arr[r2][c1]);
+                    this.blue(this.arr[r2][c1]);
                 }
             }
             else{
@@ -83,16 +90,16 @@ class Simulation extends Component{
                 let path2 = parseInt(this.path[2*r1+1][c1]) + parseInt(this.path[2*r1+3][c1]) + parseInt(this.path[2*r1+4][c2]);
                 let path3 = parseInt(this.path[2*r1+1][c1]) + parseInt(this.path[2*r1+2][c2]) + parseInt(this.path[2*r1+3][c2]);
                 if(path1 < path2 && path1 < path3){
-                    this.green(this.arr[r1][c2]);
-                    this.green(this.arr[r1+1][c2]);
+                    this.blue(this.arr[r1][c2]);
+                    this.blue(this.arr[r1+1][c2]);
                 }
                 else if(path2 < path1 && path2 < path3){
-                    this.green(this.arr[r1+1][c1]);
-                    this.green(this.arr[r1+2][c1]);
+                    this.blue(this.arr[r1+1][c1]);
+                    this.blue(this.arr[r1+2][c1]);
                 }
                 else{
-                    this.green(this.arr[r1+1][c1]);
-                    this.green(this.arr[r1+1][c2]);
+                    this.blue(this.arr[r1+1][c1]);
+                    this.blue(this.arr[r1+1][c2]);
                 }
             }
         }
@@ -102,54 +109,56 @@ class Simulation extends Component{
                 let path2 = parseInt(this.path[2*r1+1][c1]) + parseInt(this.path[2*r1+2][c1+1]) + parseInt(this.path[2*r1+2][c2]);
                 let path3 = parseInt(this.path[2*r1][c1+1]) + parseInt(this.path[2*r1+1][c1+1]) + parseInt(this.path[2*r1+2][c2]);
                 if(path1 < path2 && path1 < path3){
-                    this.green(this.arr[r1][c1+1]);
-                    this.green(this.arr[r1][c2]);
+                    this.blue(this.arr[r1][c1+1]);
+                    this.blue(this.arr[r1][c2]);
                 }
                 else if(path2 < path1 && path2 < path3){
-                    this.green(this.arr[r1+1][c1]);
-                    this.green(this.arr[r1+1][c1+1]);
+                    this.blue(this.arr[r1+1][c1]);
+                    this.blue(this.arr[r1+1][c1+1]);
                 }
                 else{
-                    this.green(this.arr[r1][c1+1]);
-                    this.green(this.arr[r1+1][c1+1]);
+                    this.blue(this.arr[r1][c1+1]);
+                    this.blue(this.arr[r1+1][c1+1]);
                 }
             }
             else{
-                let p1 = parseInt(this.path[0][1]) + parseInt(this.path[0][2]) + parseInt(this.path[1][2] + parseInt(this.path[3][2]));
-                let p2 = parseInt(this.path[0][1]) + parseInt(this.path[1][1]) + parseInt(this.path[2][2] + parseInt(this.path[3][2]));
-                let p3 = parseInt(this.path[0][1]) + parseInt(this.path[1][1]) + parseInt(this.path[3][1] + parseInt(this.path[4][2]));
-                let p4 = parseInt(this.path[1][0]) + parseInt(this.path[2][1]) + parseInt(this.path[2][2] + parseInt(this.path[3][2]));
-                let p5 = parseInt(this.path[1][0]) + parseInt(this.path[2][1]) + parseInt(this.path[3][1] + parseInt(this.path[4][2]));
-                let p6 = parseInt(this.path[1][0]) + parseInt(this.path[3][0]) + parseInt(this.path[4][1] + parseInt(this.path[4][2]));
-                if(p1<p2 && p1<p3 && p1<p4 && p1<p5 && p1<p6){
-                    this.green(this.arr[0][1]);
-                    this.green(this.arr[0][2]);
-                    this.green(this.arr[1][2]);
+                let p1 = parseInt(this.path[0][1]) + parseInt(this.path[0][2]) + parseInt(this.path[1][2]) + parseInt(this.path[3][2]);
+                let p2 = parseInt(this.path[0][1]) + parseInt(this.path[1][1]) + parseInt(this.path[2][2]) + parseInt(this.path[3][2]);
+                let p3 = parseInt(this.path[0][1]) + parseInt(this.path[1][1]) + parseInt(this.path[3][1]) + parseInt(this.path[4][2]);
+                let p4 = parseInt(this.path[1][0]) + parseInt(this.path[2][1]) + parseInt(this.path[2][2]) + parseInt(this.path[3][2]);
+                let p5 = parseInt(this.path[1][0]) + parseInt(this.path[2][1]) + parseInt(this.path[3][1]) + parseInt(this.path[4][2]);
+                let p6 = parseInt(this.path[1][0]) + parseInt(this.path[3][0]) + parseInt(this.path[4][1]) + parseInt(this.path[4][2]);
+                console.log('1 ', p1, '2 ', p2, '3 ', p3, '4 ', p4,  '5', p5, '6 ', p6);
+                if(p1<=p2 && p1<=p3 && p1<=p4 && p1<=p5 && p1<=p6){
+                    console.log("Working 1!");
+                    this.blue(this.arr[0][1]);
+                    this.blue(this.arr[0][2]);
+                    this.blue(this.arr[1][2]);
                 }
-                else if(p2<p1 && p2<p3 && p2<p4 && p2<p5 && p2<p6){
-                    this.green(this.arr[0][1]);
-                    this.green(this.arr[1][1]);
-                    this.green(this.arr[1][2]);
+                else if(p2<=p1 && p2<=p3 && p2<=p4 && p2<=p5 && p2<=p6){
+                    this.blue(this.arr[0][1]);
+                    this.blue(this.arr[1][1]);
+                    this.blue(this.arr[1][2]);
                 }
-                else if(p3<p1 && p3<p2 && p3<p4 && p3<p5 && p3<p6){
-                    this.green(this.arr[0][1]);
-                    this.green(this.arr[1][1]);
-                    this.green(this.arr[2][1]);
+                else if(p3<=p1 && p3<=p2 && p3<=p4 && p3<=p5 && p3<=p6){
+                    this.blue(this.arr[0][1]);
+                    this.blue(this.arr[1][1]);
+                    this.blue(this.arr[2][1]);
                 }
-                else if(p4<p1 && p4<p3 && p4<p2 && p4<p5 && p4<p6){
-                    this.green(this.arr[1][0]);
-                    this.green(this.arr[1][1]);
-                    this.green(this.arr[1][2]);
+                else if(p4<=p1 && p4<=p3 && p4<=p2 && p4<=p5 && p4<=p6){
+                    this.blue(this.arr[1][0]);
+                    this.blue(this.arr[1][1]);
+                    this.blue(this.arr[1][2]);
                 }
-                else if(p5<p1 && p5<p3 && p5<p4 && p5<p2 && p5<p6){
-                    this.green(this.arr[1][0]);
-                    this.green(this.arr[1][1]);
-                    this.green(this.arr[2][1]);
+                else if(p5<=p1 && p5<=p3 && p5<=p4 && p5<=p2 && p5<=p6){
+                    this.blue(this.arr[1][0]);
+                    this.blue(this.arr[1][1]);
+                    this.blue(this.arr[2][1]);
                 }
                 else{
-                    this.green(this.arr[1][0]);
-                    this.green(this.arr[2][0]);
-                    this.green(this.arr[2][1]);
+                    this.blue(this.arr[1][0]);
+                    this.blue(this.arr[2][0]);
+                    this.blue(this.arr[2][1]);
                 }
             }
         }
