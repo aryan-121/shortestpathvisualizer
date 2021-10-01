@@ -180,6 +180,11 @@ class Simulation extends Component{
                 this.setState({start: undefined, click: 0});
                 this.red(id);
             }else{
+                let ch1 = id.charCodeAt(0)-97;
+                if(ch1 < (this.state.start.charCodeAt(0)-97)){
+                    alert("All paths are uni-directional ! No route is possible !");
+                    return;
+                }
                 this.setState({click: 2, end: id});
                 this.green(id);
                 setTimeout(() => {
