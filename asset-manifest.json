@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/shortestpathvisualizer/static/css/main.60b85431.chunk.css",
-    "main.js": "/shortestpathvisualizer/static/js/main.961b6a01.chunk.js",
-    "main.js.map": "/shortestpathvisualizer/static/js/main.961b6a01.chunk.js.map",
+    "main.css": "/shortestpathvisualizer/static/css/main.5e7c06a9.chunk.css",
+    "main.js": "/shortestpathvisualizer/static/js/main.c12ec176.chunk.js",
+    "main.js.map": "/shortestpathvisualizer/static/js/main.c12ec176.chunk.js.map",
     "runtime-main.js": "/shortestpathvisualizer/static/js/runtime-main.2c80aaae.js",
     "runtime-main.js.map": "/shortestpathvisualizer/static/js/runtime-main.2c80aaae.js.map",
     "static/js/2.e8536f70.chunk.js": "/shortestpathvisualizer/static/js/2.e8536f70.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.64df80ab.chunk.js": "/shortestpathvisualizer/static/js/3.64df80ab.chunk.js",
     "static/js/3.64df80ab.chunk.js.map": "/shortestpathvisualizer/static/js/3.64df80ab.chunk.js.map",
     "index.html": "/shortestpathvisualizer/index.html",
-    "static/css/main.60b85431.chunk.css.map": "/shortestpathvisualizer/static/css/main.60b85431.chunk.css.map",
+    "static/css/main.5e7c06a9.chunk.css.map": "/shortestpathvisualizer/static/css/main.5e7c06a9.chunk.css.map",
     "static/js/2.e8536f70.chunk.js.LICENSE.txt": "/shortestpathvisualizer/static/js/2.e8536f70.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2c80aaae.js",
     "static/js/2.e8536f70.chunk.js",
-    "static/css/main.60b85431.chunk.css",
-    "static/js/main.961b6a01.chunk.js"
+    "static/css/main.5e7c06a9.chunk.css",
+    "static/js/main.c12ec176.chunk.js"
   ]
 }
