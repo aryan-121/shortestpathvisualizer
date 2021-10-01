@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Heading from "./components/heading/Heading";
+import Reset from "./components/reset/Reset";
 import Simulation from "./components/simulation/Simulation";
 import Theory from "./components/theory/Theory";
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
           <Theory />
           <br /><br />
           <Simulation />
+          <Reset />
       </div>
     );
   };
